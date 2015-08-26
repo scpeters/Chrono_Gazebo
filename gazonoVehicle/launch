@@ -1,0 +1,4 @@
+#!/bin/bash
+xterm -e roscore &
+xterm -e python ./OpenCV/follower_opencv.py &
+xterm -e rosrun gazebo_ros gazebo gazonoVehicle.world
