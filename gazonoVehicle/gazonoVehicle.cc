@@ -116,10 +116,13 @@ class GazonoVehicle : public WorldPlugin
     initRot = ChQuaternion<>(1.0, 0.0, 0.0, 0.0);
 
     //create the chrono vehicle
-    boost::filesystem::path full_path( boost::filesystem::current_path() );
+    // boost::filesystem::path full_path( boost::filesystem::current_path() );
+    // std::cout<<"Current path is: "<<full_path<<std::endl;
+    // std::cout<<"Looking for data at: "<<vehicle::GetDataFile(vehicle_file)<<std::endl;
 
+    //std::cout<<"Loaded world plugin!\n";
     vehicle = ChSharedPtr<Vehicle>(new Vehicle(vehicle::GetDataFile(vehicle_file)));
-
+    //std::cout<<"Loaded vehicle\n";
     vehicle->Initialize(ChCoordsys<>(initLoc, initRot));
 
     terrain = ChSharedPtr<RigidTerrain> (new RigidTerrain(vehicle->GetSystem(), terrainHeight, terrainLength, terrainWidth, 0.8));
