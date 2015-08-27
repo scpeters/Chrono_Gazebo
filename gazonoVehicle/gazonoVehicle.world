@@ -179,7 +179,7 @@
 
     <road name="Secondary">
       <width>7.5</width>
-      <point>0 0 0</point>
+      <point>5 0 0</point>
       <point>10 0 0</point>
       <point>20 14.7 0</point>
       <point>30 23.8 0</point>
@@ -191,6 +191,18 @@
       <point>90 -23.8 0</point>
       <point>100 -14.8 0</point>
       <point>110 0 0</point>
+      <point>110 10 0</point>
+      <point>100 30 0</point>
+      <point>90 40 0</point>
+      <point>80 45 0</point>
+      <point>70 50 0</point>
+      <point>0 50 0</point>
+      <point>-10 40 0</point>
+      <point>-20 35 0</point>
+      <point>-20 15 0</point>
+      <point>-10 10 0</point>
+      <point>0 0 0</point>
+      <point>5 0 0</point>
       <material>
         <script>
           <uri>file://../data/gazono.material</uri>

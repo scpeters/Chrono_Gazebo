@@ -22,7 +22,7 @@ class Follower:
       #upper_yellow = numpy.array([255, 255, 190])
       mask = cv2.inRange(hsv, lower_yellow, upper_yellow)
       h, w, d = image.shape
-      search = int(h/2.0*(math.asin(0.5/2.0) / .875) + h/2.0)
+      search = int(h/2.0*(math.asin(0.5/3.0) / .875) + h/2.0)
       search_top = search - 10
       search_bot = search_top + 10
       mask[0:search_top, 0:w] = 0

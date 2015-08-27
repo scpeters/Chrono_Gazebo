@@ -147,6 +147,9 @@ class GazonoVehicle : public WorldPlugin
 
     tire_forces = ChTireForces(num_wheels);
     wheel_states = ChWheelStates(num_wheels);
+    vehicle->GetSystem()->SetIterLCPmaxItersSpeed(300);
+    vehicle->GetSystem()->SetIterLCPmaxItersStab(20);
+    vehicle->GetSystem()->SetMaxPenetrationRecoverySpeed(0.5);
 
     this->updateConnection = event::Events::ConnectWorldUpdateBegin(
          boost::bind(&GazonoVehicle::OnUpdate, this));
@@ -156,11 +159,11 @@ class GazonoVehicle : public WorldPlugin
    {
      //control vehicle speed control
      //this will maintain an approximate speed of 7 m/s
-     if(vehicle->GetVehicleSpeedCOM() <= 5.0){
+     if(vehicle->GetVehicleSpeedCOM() <= 3.0){
        braking_input = 0.0;
        throttle_input = 0.3;
      }
-     else if(vehicle->GetVehicleSpeedCOM() >= 7.0){
+     else if(vehicle->GetVehicleSpeedCOM() >= 5.0){
        braking_input = 0.3;
        throttle_input = 0.1;
      }
