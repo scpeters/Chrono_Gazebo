@@ -22,7 +22,7 @@ INSTALL:
 BUILD:
   clone this repository
   create build directory inside gazonoVehicle - this will give correct path for vehicle data
-  make
+  cmake ..; make
 
 RUN:
   $./launch from inside gazonoVehicle directory
